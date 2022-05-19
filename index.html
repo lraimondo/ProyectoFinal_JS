@@ -1,0 +1,219 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/clase.js"></script>
+    <script src="js/codigo.js"></script>
+</head>
+<body>
+    
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" src="img/logo.jpg" alt="logo">
+          <ul id="navPrincipal">
+            <li id="menuSubirEjercicio">  <!-- Subir ejercicio como profesor -->
+              <a>Subir Ejercicio</a>
+            </li>
+            <li id="menuVerEjercicios">   <!-- Visible a los alumnos para ver ejercicios a resolver -->
+              <a>Ejercicios</a>
+            </li>
+            <li id="menuCorregir">
+              <a>Corregir Ejercicios</a>  <!-- Corregir ejercicios, visible al docente -->
+            </li>
+            <li id="menuAlumnos">         <!-- Para que el docente vea a los alumnos -->
+              <a>Alumnos</a>
+            </li>
+            <li id="menuSubirEjAlumno">   <!-- Menu para que el alumno suba ejercicios -->
+              <a>Subir ejercicio resuelto</a>
+            </li>
+            <li id="menuVerEjerciciosResueltosAlumno">   <!-- Menu para que el alumno vea los ejercicios resueltos -->
+              <a>Ver ejercicios resueltos</a>
+            </li>
+            <li id="menuVerDevolucionesAlumno">   <!-- Menu para que el alumno vea sus devoluciones -->
+              <a>Ver devoluciones</a>
+            </li>
+            <li id="menuVerEstadisticasDocente">   <!-- Menu para que el docente vea las estadisticas -->
+              <a>Ver Estadisticas</a>
+            </li>
+            <li id="menuVerEstadisticasAlumno">   <!-- Menu para que el alumno vea las estadisticas -->
+              <a>Ver Estadisticas</a>
+            </li>
+            <li id="menuSalir">
+              <a>Salir</a>
+            </li>
+        </ul>
+        <p id="nombreUsuarioLogueado"></p>
+          
+        </div><!-- FIN CABEZAL -->
+     
+        <div id="contenido">
+            <div id="alumno_Docente">
+                <br><br><br><br><br>
+              <input type="button" id="btnAlumno" value="Alumno">
+              <input type="button" id="btnDocente" value="Docente">
+            </div>
+
+            <div id="loginAlumno">
+                <h3>Login</h3>
+                <label for="txtAlumno">Ingrese usuario</label>
+                <input type="text" id = "txtAlumno"><br>
+                <label for="txtClaveAlumno">Ingrese clave</label>
+                <input type="password" id = "txtClaveAlumno"><br>
+                <input type="button" id="btnLoginAlumno" value="Login">
+                <p id="loginA"> </p>
+            </div>
+           
+            <div id="registrarAlumno">
+                <h3>Registro</h3>
+                <label for="txtAlumnoRegistro">Ingrese usuario</label>
+                <input type="text" id = "txtAlumnoRegistro"><br>
+                <label for="txtClaveRegistroAlumno">Ingrese clave</label>
+                <input type="password" id = "txtClaveRegistroAlumno"><br>
+                <label for="txtNombreCompletoRegistroAlumno">Ingrese nombre completo</label>
+                <input type="text" id = "txtNombreCompletoRegistroAlumno"><br>
+                <select id="seleccionarDocente">
+
+                </select>
+                 <input type="button" id="btnRegistrarAlumno" value="Registrar">
+                <p id="registroAlumno"> </p>
+            </div>
+
+            <div id="loginDocente">
+                <h3>Login</h3>
+                <label for="txtDocente">Ingrese usuario</label>
+                <input type="text" id = "txtDocente"><br>
+                <label for="txtClaveDocente">Ingrese clave</label>
+                <input type="password" id = "txtClaveDocente"><br>
+                <input type="button" id="btnLoginDocente" value="Login">
+                <p id="loginD"> </p>
+            </div>
+           
+            <div id="registrarDocente">
+                <h3>Registro</h3>
+                <label for="txtRegistroDocente">Ingrese usuario</label>
+                <input type="text" id = "txtRegistroDocente"><br>
+                <label for="txtClaveRegistroDocente">Ingrese clave</label>
+                <input type="password" id = "txtClaveRegistroDocente"><br>
+                <label for="txtNombreCompletoRegistroDocente">Ingrese nombre completo</label>
+                <input type="text" id = "txtNombreCompletoRegistroDocente"><br>
+                 <input type="button" id="btnRegistrarDocente" value="Registrar">
+                <p id="registroDocente"> </p>
+            </div>
+
+            <div id="subirEjercicio">      <!-- Subir ejercicio como profesor -->
+                <h3>Subir Ejercicio</h3>
+                <label for="txtTitulo">Ingrese titulo</label>
+                <input type="text" id= "txtTitulo"><br>
+                <br>
+                <label for="txtDescripcion">Ingrese descripcion</label><br>
+                <textarea id="txtDescripcion" rows="4" cols="50"> 
+                </textarea><br>
+                <br>
+                <label for="txtNivel">Seleccionar Nivel</label>
+                <select id="txtNivel">
+                    <option>Inicial</option>
+                    <option>Intermedio</option>
+                    <option>Avanzado</option>
+                </select>
+                <label for="imagen"></label>
+                <input type="file" id="imagen">
+                <br>
+                <br>
+                <input type="button" id="btnSubirEjercicio" value="Subir Ejercicio">
+                <p id="mensajesSubirEjercicio"> </p>
+            </div>
+
+            <div id="volver">
+                <br>
+                <input type="button" id="btnVolver" value="Volver">
+            </div>
+           
+            <div id="verEjercicios">     <!-- Divs ejercicios como alumno -->
+                <input type="texto" id="BuscarEj" placeholder="Ingrese titulo del ejercicio">
+                <br>
+                <input type="button" id="btnBuscarEj" value="Buscar">
+                <p id="listaEjercicios"></p>
+            </div>
+
+            <div id="subirEjercicioResuelto">
+                <label for="selectEjercicios">Seleccione Ejercicio </label>
+                <br>
+                <br>
+                <select id="selectEjercicios">
+                  
+                </select>
+                <br>
+                <br>
+                <label for="subirAudio"> Subir audio </label>
+                <input type="file" id="subirAudio">
+                <br>
+                <br>
+                <input type="button" id="subirEjTerminado" value="Enviar">
+                <p id="ejResuelto"></p>
+            </div>
+
+            <div id="verAlumnos">        <!-- Ver alumnos y cambiarlos de nivel -->
+                <label for="seleccionarAlumnos">Seleccione Alumno </label>
+                <select id="seleccionarAlumnos">
+                </select>
+                <br>
+                <label for="seleccionarNivel">Seleccionar Nivel</label>
+                <select id="seleccionarNivel">
+                    <option>Intermedio</option>
+                    <option>Avanzado</option>
+                </select>
+                <p id="mensajeSelect"></p>
+                <input type="button" id="btnSelect" value="Cambiar Nivel">
+            </div>
+        
+            <div id="Correciones">                   <!-- Correcciones por parte del docente -->
+              <label for="selectDevolucionesDocente">Seleccionar Ejercicio</label>
+              <br>
+              <select id="selectDevolucionesDocente">
+                
+              </select>
+              <br>
+              <input type="button" id="btnEscuchar" value="Escuchar ejercicio"><br>
+              <p id="devolucion"></p>
+              <label for="redactarDevolucion">Redactar Devolucion</label><br>
+              <textarea id="redactarDevolucion" rows="4" cols="50"></textarea>
+              <br>
+              <input type="button" id="btnDevolucion" value="Subir">
+              <p id="confirmacionDevolucion"></p>
+          </div>
+
+          <div id="verEjerciciosResueltosAlumno">
+              <p id="verEjs"></p>
+          </div>
+
+          <div id="estadisticasDocente">
+              <p id="estadisticasDo"></p>
+              <select id="selectEstadisticasDocente">
+
+              </select>
+              <br>
+              <input type="button" id="btnDesplegable" value="Mostrar estadísticas">
+              <p id="mostrarEstadisticasPersonalizadasDocente"></p>
+          </div>
+
+          <div id="estadisticasAlumno">
+              <p id="estadisticasAl"></p>
+          </div>
+
+          <div id="tablaDevolucionesAlumno">
+              <p id="verDevs"></p>
+          </div>
+
+          
+
+        </div><!-- FIN CONTENIDO -->
+        <div id="pie">
+            <p> Gonzalo Barces, Santiago Barreira, Lucia Raimondo</p> 
+            </div><!-- FIN PIE -->
+    </div><!-- FIN CONTENEDOR -->
+</body>
+</html>
